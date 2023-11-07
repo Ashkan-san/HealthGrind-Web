@@ -1,0 +1,9 @@
+DEPLOYMENT
+
+- Im app.yaml Verzeichnis: gcloud app deploy
+- jar Datei muss dafür im selben Verzeichnis wie yaml sein
+- TODO noch wird nix angezeigt
+- unter App Engine -> Einstellungen kann man App aktivieren und deaktivieren
+
+- entrypoint: 'java -jar shoppinglist-1.0-SNAPSHOT-all.jar' ist der befehl der von gae ausgeführt wird beim Starten
+- in diesem Fall startet dieser die Java Anwendung
