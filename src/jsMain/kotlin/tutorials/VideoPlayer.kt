@@ -1,3 +1,6 @@
+package tutorials
+
+import Video
 import emotion.react.css
 import react.FC
 import react.Props

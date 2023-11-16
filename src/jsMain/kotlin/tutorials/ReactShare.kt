@@ -1,6 +1,8 @@
 @file:JsModule("react-share")
 @file:JsNonModule
 
+package tutorials
+
 import react.ComponentClass
 import react.Props
 

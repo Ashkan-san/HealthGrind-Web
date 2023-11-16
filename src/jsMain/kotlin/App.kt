@@ -1,19 +1,22 @@
-import emotion.react.css
-import kotlinx.browser.window
-import kotlinx.coroutines.*
-import kotlinx.serialization.json.Json
+import components.*
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import mui.material.Stack
+import mui.system.responsive
+import mui.system.sx
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.img
 import react.dom.html.ReactHTML.li
 import react.dom.html.ReactHTML.ul
 import react.useEffectOnce
 import react.useState
-import web.cssom.Position
+import theme.ThemeModule
+import tutorials.VideoList
+import tutorials.VideoPlayer
+import tutorials.inputComponent
 import web.cssom.px
 import kotlin.random.Random
 
@@ -23,7 +26,6 @@ private val scope = MainScope()
 // FC = Functional Component
 // Code darin ist Verhalten und Rendering Logik der Komponente
 val App = FC<Props> {
-
     // Hooks wie useState, useEffect usw. sind von React
     // useState ist wie eine Art Variable?
     // useEffect ist eine Funktion?
@@ -125,4 +127,22 @@ val App2 = FC<Props> {
             }
         }
     }
+}
+
+val App3 = FC<Props> {
+    ThemeModule {
+        MyHeader()
+        Stack {
+            sx {
+                padding = 50.px
+            }
+            spacing = responsive(2)
+
+            MyCard()
+            CardGrid()
+            MyTable()
+            MyBottomNavigation()
+        }
+    }
+
 }

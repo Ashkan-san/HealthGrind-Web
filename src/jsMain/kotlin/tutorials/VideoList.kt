@@ -1,6 +1,8 @@
-import kotlinx.browser.window
-import react.*
-import react.dom.*
+package tutorials
+
+import Video
+import react.FC
+import react.Props
 import react.dom.html.ReactHTML.p
 
 // When the props of a component are changed in React, the framework automatically re-renders the component

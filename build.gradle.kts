@@ -1,10 +1,10 @@
-import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 import com.google.cloud.tools.gradle.appengine.appyaml.AppEngineAppYamlExtension
+import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 
 val kotlinVersion = "1.9.20"
 val serializationVersion = "1.6.0"
 val ktorVersion = "2.3.3"
-val logbackVersion = "1.2.11"
+val logbackVersion = "1.4.11"
 val kotlinWrappersVersion = "1.0.0-pre.637"
 val mongodbVersion = "4.11.0"
 
@@ -50,8 +50,11 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
+                // KTOR CORE
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
+
+                // KOTLIN SER + COROUTINES
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:$serializationVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
                 implementation("org.mongodb:bson:$mongodbVersion")
             }
@@ -59,6 +62,7 @@ kotlin {
 
         val jvmMain by getting {
             dependencies {
+                // KTOR SER, CORE, NETTY
                 implementation("io.ktor:ktor-serialization:$ktorVersion")
                 implementation("io.ktor:ktor-server-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
@@ -66,6 +70,8 @@ kotlin {
                 implementation("io.ktor:ktor-server-compression:$ktorVersion")
                 implementation("io.ktor:ktor-server-core-jvm:$ktorVersion")
                 implementation("io.ktor:ktor-server-netty:$ktorVersion")
+
+                // LOGGING
                 implementation("ch.qos.logback:logback-classic:$logbackVersion")
             }
         }
@@ -85,6 +91,13 @@ kotlin {
                 // Video Player, Share Button
                 implementation(npm("react-player", "2.12.0"))
                 implementation(npm("react-share", "4.4.1"))
+
+                // MUI
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-mui-base-js:5.0.0-beta.18-pre.638")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-mui-material-js:5.14.12-pre.639")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-mui-js:5.14.12-pre.638")
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-mui-icons:5.14.12-pre.638")
+
             }
         }
 
@@ -159,3 +172,4 @@ configure<AppEngineAppYamlExtension> {
         projectId = "GCLOUD_CONFIG"
     }
 }
+

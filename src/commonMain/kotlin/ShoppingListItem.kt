@@ -14,6 +14,6 @@ data class ShoppingListItem(
 ) {
     // Weitere Infos über das Objekt speichern, hier der Zugriffspfad
     companion object {
-        const val path = "/shoppingList"
+        const val path = "/shoppinglist"
     }
 }

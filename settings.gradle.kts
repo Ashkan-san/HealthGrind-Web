@@ -12,5 +12,5 @@ pluginManagement {
         }
     }
 }
-rootProject.name = "shoppinglist"
+rootProject.name = "healthGrind"
 

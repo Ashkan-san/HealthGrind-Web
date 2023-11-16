@@ -7,3 +7,17 @@ DEPLOYMENT
 
 - entrypoint: 'java -jar shoppinglist-1.0-SNAPSHOT-all.jar' ist der befehl der von gae ausgeführt wird beim Starten
 - in diesem Fall startet dieser die Java Anwendung
+
+AUTO RELOAD
+- build -t zuerst
+- run -t danach
+- dauert bisschen, bis er updated
+
+- jsBrowserRun -t für Frontend Änderungen besser!
+
+THEME
+- ThemeProvider { theme = Themes.hgTheme } um FC herum
+
+
+ALLGEMEIN
+- jso: JavaScriptObject
